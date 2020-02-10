@@ -48,6 +48,8 @@ function doubleArrayValues(array) {
     return array;
 }
 
+Linear Time - O(n) because you are making insertions into an array. The longer/larger the input is directly related to the number of operations and increase of time. 
+
 5. Naive search
 What is the Big O of the following algorithm? Explain your answer
 
@@ -59,6 +61,8 @@ function naiveSearch(array, item) {
     }
 }
 
+Polynomial Time/Quadratic Time O(n^2) - depending on the input size, the worse possible complexity is that the for loop will have to pass through every item in the array. This would be some input constant raised to the 2nd power, e.g. 10 ^ 2 = 1000ms or 1 second. 
+
 6. Creating pairs:
 What is the Big O of the following algorithm? Explain your answer
 
@@ -69,6 +73,10 @@ function createPairs(arr) {
         }
     }
 }
+
+Linear time - O(n) because the algorithm is not performing a sort, insert, or delete on the array. It is only accessing the data and displaying it as a 'pair'. The larger the array the more time it takes. 
+
+
 
 7. Compute the sequence
 What does the following algorithm do? What is its runtime complexity? Explain your answer
@@ -89,6 +97,11 @@ function compute(num) {
     }
     return result;
 }
+
+This algorithm inserts n values into a result array depending on the size of n. If the number is 1 a single value of 0 is passed to the result array. If the number is 2; 0 & 1 are passed as elements to the array. Otherwise, the algorithm pushes a value of result[i - 2] + result[i -3] to the succeeding elements of the array. For example, if the input is 5 the algorithm will insert into result.. 0, 1, 1 + 0, 1 + 1, 2 + 1 or [0, 1, 1, 2, 3].  result[1-2] and result[1-3] indicate the stored values within the index of i -2 + i -3. 
+
+The runtime is Polynomial Cubic - O(n^3) at worst complexity because it requires 3 operations per tick if the input is larger than 2. For each cycle where the number is larger than 2 the algorithm must access 2 separate indeces from the array and insert that value into a new element resulting in 3 operations per tick. 
+
 
 8. An efficient search
 In this example, we return to the problem of searching using a more sophisticated approach than in naive search, above. Assume that the input array is always sorted. What is the Big O of the following algorithm? Explain your answer
